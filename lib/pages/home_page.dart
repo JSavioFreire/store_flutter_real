@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:store_flutter_real/controllers/category_controller.dart';
 import 'package:store_flutter_real/controllers/products_controller.dart';
 import 'package:store_flutter_real/widgets/app_bar/app_bar.dart';
 import 'package:store_flutter_real/widgets/carousel_home_page/carousel.dart';
@@ -12,6 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final heiAppBar = MediaQuery.of(context).size.height * 0.25;
     final ProductsController controller = ProductsController();
+    final CategoryController controllerCategory = CategoryController();
 
     controller.callApi();
 
@@ -24,7 +26,8 @@ class HomePage extends StatelessWidget {
               animation: Listenable.merge([
                 controller.productsController,
                 controller.inLoadProducts,
-                controller.productsICanSee
+                controller.productsICanSee,
+                controllerCategory.whatCategory
               ]),
               builder: ((_, __) => controller.inLoadProducts.value
                   ? const Center(child: CircularProgressIndicator())
@@ -43,17 +46,20 @@ class HomePage extends StatelessWidget {
                         for (int i = 0;
                             i < controller.productsICanSee.value;
                             i++)
-                          Products(
-                              controller.productsController.value[i].title
-                                  .toString(),
-                              controller.productsController.value[i].image
-                                  .toString(),
-                              controller.productsController.value[i].description
-                                  .toString(),
-                              controller.productsController.value[i].price
-                                  .toString(),
-                              controller.productsController.value[i].category
-                                  .toString()),
+                          if (controllerCategory.whatCategory.value ==
+                              controller.productsController.value[i].category)
+                            Products(
+                                controller.productsController.value[i].title
+                                    .toString(),
+                                controller.productsController.value[i].image
+                                    .toString(),
+                                controller
+                                    .productsController.value[i].description
+                                    .toString(),
+                                controller.productsController.value[i].price
+                                    .toString(),
+                                controller.productsController.value[i].category
+                                    .toString()),
                         Container(
                             margin: const EdgeInsets.symmetric(vertical: 20),
                             child: controller.productsICanSee.value <

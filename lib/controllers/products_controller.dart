@@ -6,7 +6,7 @@ import 'package:store_flutter_real/models/itens_controller.dart';
 class ProductsController {
   ValueNotifier productsController = ValueNotifier([]);
   ValueNotifier inLoadProducts = ValueNotifier(false);
-  ValueNotifier productsICanSee = ValueNotifier(6);
+  ValueNotifier productsICanSee = ValueNotifier(4);
 
   callApi() async {
     var client = http.Client();

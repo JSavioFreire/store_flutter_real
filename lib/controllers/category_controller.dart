@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 class CategoryController {
   ValueNotifier categorysApi = ValueNotifier([]);
   ValueNotifier inLoadCategory = ValueNotifier(false);
+  ValueNotifier whatCategory = ValueNotifier('electronics');
 
   callApi() async {
     var client = http.Client();
