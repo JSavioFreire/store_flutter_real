@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_flutter_real/pages/cart_page.dart';
 import 'package:store_flutter_real/pages/home_page.dart';
 import 'package:store_flutter_real/pages/product_page.dart';
 import 'package:store_flutter_real/theme/theme.dart';
@@ -19,7 +20,8 @@ class MyStore extends StatelessWidget {
         initialRoute: '/home',
         routes: {
           '/home': (context) => const HomePage(),
-          '/products': (context) => const ProductPage()
+          '/products': (context) => const ProductPage(),
+          '/cart': (context) => const CartPage()
         });
   }
 }
