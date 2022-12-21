@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_flutter_real/pages/home_page.dart';
+import 'package:store_flutter_real/pages/product_page.dart';
 import 'package:store_flutter_real/theme/theme.dart';
 
 void main() {
@@ -16,6 +17,9 @@ class MyStore extends StatelessWidget {
         theme: theme,
         title: 'Store',
         initialRoute: '/home',
-        routes: {'/home': (context) => HomePage()});
+        routes: {
+          '/home': (context) => const HomePage(),
+          '/products': (context) => const ProductPage()
+        });
   }
 }
