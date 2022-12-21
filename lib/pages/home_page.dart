@@ -46,13 +46,21 @@ class HomePage extends StatelessWidget {
                             margin: const EdgeInsets.symmetric(vertical: 20),
                             child: controller.productsICanSee.value <
                                     controller.productsController.value.length
-                                ? ElevatedButton(
+                                ? controller.productsICanSee.value + 6 > controller.productsController.value.length ?
+                                ElevatedButton(
                                     onPressed: () =>
-                                        controller.productsICanSee.value += 5,
+                                        controller.productsICanSee.value += controller.productsController.value.length - controller.productsICanSee.value ,
                                     child: const Text('See more products'))
-                                : Text('CHEIO'))
+                                : ElevatedButton(
+                                    onPressed: () =>
+                                        controller.productsICanSee.value += 6,
+                                    child: const Text('See more products'))
+                                : const ElevatedButton(
+                                    onPressed: null,
+                                    child: Text('All products are already being seen')))
                       ],
-                    )))
+                    ))
+                    )
         ],
       )),
     );
