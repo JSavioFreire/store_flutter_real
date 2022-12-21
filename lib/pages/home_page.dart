@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:store_flutter_real/controllers/products_controller.dart';
 import 'package:store_flutter_real/widgets/app_bar/app_bar.dart';
-import 'package:store_flutter_real/widgets/carousel/carousel.dart';
-import 'package:store_flutter_real/widgets/products/products.dart';
+import 'package:store_flutter_real/widgets/carousel_home_page/carousel.dart';
+import 'package:store_flutter_real/widgets/products_home_page/products.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

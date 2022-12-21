@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_flutter_real/widgets/bt_add_cart/bt_add_cart.dart';
 
 class Products extends StatelessWidget {
   final String title;
@@ -53,8 +54,7 @@ class Products extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ElevatedButton(
-                          onPressed: () {}, child: const Text('Add to Cart')),
+                      const BtAddCart(),
                       Text(
                         'R\$ $price',
                         style:
