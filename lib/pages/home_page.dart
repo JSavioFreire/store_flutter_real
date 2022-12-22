@@ -46,20 +46,17 @@ class HomePage extends StatelessWidget {
                         for (int i = 0;
                             i < controller.productsICanSee.value;
                             i++)
-                          if (controllerCategory.whatCategory.value ==
-                              controller.productsController.value[i].category)
-                            Products(
-                                controller.productsController.value[i].title
-                                    .toString(),
-                                controller.productsController.value[i].image
-                                    .toString(),
-                                controller
-                                    .productsController.value[i].description
-                                    .toString(),
-                                controller.productsController.value[i].price
-                                    .toString(),
-                                controller.productsController.value[i].category
-                                    .toString()),
+                          Products(
+                              controller.productsController.value[i].title
+                                  .toString(),
+                              controller.productsController.value[i].image
+                                  .toString(),
+                              controller.productsController.value[i].description
+                                  .toString(),
+                              controller.productsController.value[i].price
+                                  .toString(),
+                              controller.productsController.value[i].category
+                                  .toString()),
                         Container(
                             margin: const EdgeInsets.symmetric(vertical: 20),
                             child: controller.productsICanSee.value <
